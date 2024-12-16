@@ -1,0 +1,150 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background: radial-gradient(134.34% 134.34% at 50% 50%, #1F3757 0%, #131537 100%);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+.rules {
+  width: 400px;
+  margin: 177px auto;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 32px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.desktop {
+  display: block;
+}
+.mobile {
+  display: none;
+}
+.header {
+  width: 336px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header p {
+font-size: 32px;
+font-weight: 700;
+line-height: 32px;
+text-align: left;
+color: rgba(59, 66, 98, 1);
+}
+.hero {
+  width: 305px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas: 
+  "kagıt leftbeat makas"
+  "downrightbeat empty uprightbeat"
+  "tas tas tas";
+  align-items: center;
+}
+.kagıt {
+  grid-area: kagıt;
+}
+.left-beats {
+  grid-area: leftbeat;
+  margin-inline: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.makas {
+  grid-area: makas;
+}
+.down-right-beats {
+  grid-area: downrightbeat;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.up-right-beats {
+  grid-area: uprightbeat;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.tas {
+  grid-area: tas;
+  width: 109px;
+  margin: 0 auto;
+}
+
+.beats {
+  font-family: Barlow Semi Condensed;
+font-size: 13px;
+font-weight: 700;
+line-height: 13px;
+text-align: left;
+color: rgba(177, 180, 197, 1);
+}
+
+@media (width <= 375px) {
+  
+.rules {
+  width: 375px;
+  margin: 177px auto;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 32px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.header {
+  justify-content: center;
+}
+.desktop {
+  display: none;
+}
+.mobile {
+  display: block;
+  width: 19px;
+  margin: 0 auto;
+}
+}

@@ -1,0 +1,521 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background: radial-gradient(134.34% 134.34% at 50% 50%, #1F3757 0%, #131537 100%);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.container {
+  margin: 0 auto;
+  padding-block: 48px;
+}
+
+
+.score-board {
+  border: 3px solid rgba(255, 255, 255, 0.29);
+  width: 700px;
+  margin: 48px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  margin-bottom: 48px;
+  border-radius: 15px;
+}
+
+.score {
+  padding: 15px 47px;
+  background: linear-gradient(0deg, #F3F3F3 0%, #FFFFFF 100%);
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score p {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.2px;
+  letter-spacing: 2.5px;
+  text-align: left;
+  color: rgba(42, 69, 194, 1);
+}
+
+.score h2 {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 64px;
+  text-align: center;
+  color: rgba(86, 84, 104, 1);
+}
+
+.hero {
+  background-image: url(../img/bg-ucgen.png);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  width: 476px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: 24px;
+  column-gap: 80px;
+}
+
+
+.hero button {
+  width: 198px;
+  background-color: transparent;
+  border: none;
+}
+
+.hero button:hover {
+  border: 28px solid rgba(255, 255, 255, .05);
+  border-radius: 50%;
+}
+
+
+.game-show {
+  width: 960px;
+  margin: 167px auto;
+  display: flex;
+  align-items: center;
+  gap: 77px;
+}
+
+:is(.show, .computer-show) img {
+  width: 293px;
+}
+
+.show {
+  position: relative;
+}
+
+.show::before {
+  content: "Senin Seçimin";
+  position: absolute;
+  top: -103px;
+  left: 30px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 3px;
+  text-align: center;
+  color: white;
+}
+
+.computer-show {
+  position: relative;
+}
+
+.computer-show::before {
+  content: "Bilgisayarın Seçimi";
+  position: absolute;
+  top: -103px;
+  left: 30px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 3px;
+  text-align: center;
+  color: white;
+}
+
+.sonuc {
+  display: none;
+  flex-direction: column;
+  place-items: center;
+}
+
+.sonuc p {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 67.2px;
+  text-align: center;
+  color: white;
+}
+
+.tryagain {
+  background: linear-gradient(0deg, #F3F3F3 0%, #FFFFFF 100%);
+  font-weight: 600;
+  line-height: 19.2px;
+  letter-spacing: 2.5px;
+  text-align: center;
+  color: rgba(59, 66, 98, 1);
+  padding: 15px 62px 14px 60px;
+  margin-top: 16px;
+  border: none;
+  border-radius: 10px;
+}
+
+
+.rules {
+  width: 128px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  padding-block: 11px;
+  border-radius: 10px;
+  margin-top: 4px;
+  float: right;
+  margin-right: 32px;
+}
+
+.rules:hover {
+  background: linear-gradient(0deg, #F3F3F3 0%, #FFFFFF 100%);
+  border: 1px solid rgba(255, 255, 255, 1);
+  cursor: pointer;
+}
+
+.rules:hover p {
+  color: rgba(59, 66, 98, 1);
+}
+
+.rules p {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.2px;
+  letter-spacing: 2.5px;
+  text-align: center;
+  color: white;
+}
+
+
+@media (width <=768px) {
+  .container {
+    width: 311px;
+    margin: 0;
+    padding-block: 32px;
+  }
+
+
+  .score-board {
+    border: 3px solid rgba(255, 255, 255, 0.29);
+    width: 311px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 105px;
+    border-radius: 15px;
+  }
+
+  .score {
+    width: 80px;
+    padding: 10px 22px;
+    background: linear-gradient(0deg, #F3F3F3 0%, #FFFFFF 100%);
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .score p {
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 12px;
+    letter-spacing: 1.5625px;
+    text-align: center;
+    color: rgba(42, 69, 194, 1);
+  }
+
+  .header img {
+    width: 83px;
+  }
+
+  .score h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 40px;
+    text-align: center;
+    color: rgba(86, 84, 104, 1);
+  }
+
+  .hero {
+    width: 311px;
+    background-image: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 15px;
+    column-gap: 51px;
+    align-items: center;
+  }
+
+  .hero>img {
+    width: 130px;
+  }
+
+  .hero>img:hover {
+    border: 28px solid rgba(255, 255, 255, .05);
+    border-radius: 50%;
+  }
+
+  .game-show {
+    width: 311px;
+    margin: 167px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  :is(.show, .computer-show) img {
+    width: 200px;
+  }
+
+  .show {
+    position: relative;
+  }
+
+  .show::before {
+    content: "Senin Seçimin";
+    position: absolute;
+    top: -83px;
+    left: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 3px;
+    text-align: center;
+    color: white;
+  }
+
+  .computer-show {
+    position: relative;
+  }
+
+  .computer-show::after {
+    content: "Bilgisayarın Seçimi";
+    position: absolute;
+    top: 220px;
+    left:0px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 3px;
+    text-align: center;
+    color: white;
+  }
+
+  .computer-show::before {
+    content: "";
+  }
+
+
+  .rules {
+    width: 128px;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 1);
+    padding-block: 11px;
+    border-radius: 10px;
+    margin: 50px auto;
+    float: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .rules:hover {
+    background: linear-gradient(0deg, #F3F3F3 0%, #FFFFFF 100%);
+    color: rgba(59, 66, 98, 1);
+    border: 1px solid rgba(255, 255, 255, 1);
+    cursor: pointer;
+  }
+
+  .rules p {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.2px;
+    letter-spacing: 2.5px;
+  }
+
+
+}
+
+
+/* All rules codes */
+
+
+.rules-show {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: calc(50% - 200px);
+  width: 400px;
+  margin: 177px auto;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 32px;
+  border-radius: 10px;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.desktop {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
+.rules-header {
+  width: 336px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rules-header p {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 32px;
+  text-align: left;
+  color: rgba(59, 66, 98, 1);
+}
+
+.rules-hero {
+  width: 305px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas:
+    "kagıt leftbeat makas"
+    "downrightbeat empty uprightbeat"
+    "tas tas tas";
+  align-items: center;
+}
+
+.kagıt {
+  grid-area: kagıt;
+}
+
+.left-beats {
+  grid-area: leftbeat;
+  margin-inline: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.makas {
+  grid-area: makas;
+}
+
+.down-right-beats {
+  grid-area: downrightbeat;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.up-right-beats {
+  grid-area: uprightbeat;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.tas {
+  grid-area: tas;
+  width: 81px;
+  margin: 0 auto;
+}
+
+.beats {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 13px;
+  text-align: left;
+  color: rgba(177, 180, 197, 1);
+}
+
+@media (width <= 768px) {
+
+  .rules-show {
+    width: 311px;
+    margin: 177px auto;
+    background-color: rgba(255, 255, 255, 1);
+    padding-inline: 0px;
+    padding-block: 20px;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 48px;
+    position: absolute;
+    top: 0px;
+    left: 40px;
+  }
+
+  .rules-hero {
+    width: 250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas:
+      "kagıt leftbeat makas"
+      "downrightbeat empty uprightbeat"
+      "tas tas tas";
+    align-items: center;
+    padding: 0px;
+  }
+
+  .rules-header {
+    justify-content: center;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+    width: 19px;
+    margin: 0 auto;
+  }
+}
+
+
+/******************/
